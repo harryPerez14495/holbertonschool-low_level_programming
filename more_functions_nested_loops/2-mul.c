@@ -1,11 +1,3 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-int _isupper(int c);
-int _isdigit(int c);
-int mul(int a, int b);
-
-#endi
 #include "main.h"
 
 /**
@@ -18,4 +10,4 @@ int mul(int a, int b);
 int mul(int a, int b)
 {
 	return (a * b);
-}f
+}
