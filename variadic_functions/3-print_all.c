@@ -2,17 +2,6 @@
 #include "variadic_functions.h"
 
 /**
- * struct print_type - associates a type with a print function
- * @type: format character
- * @print: function used to print the argument
- */
-typedef struct print_type
-{
-	char *type;
-	void (*print)(va_list arguments);
-} print_t;
-
-/**
  * print_character - prints a character
  * @arguments: list of arguments
  */
