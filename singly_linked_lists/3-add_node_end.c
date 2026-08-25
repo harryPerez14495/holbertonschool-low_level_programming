@@ -1,0 +1,49 @@
+#include <stdlib.h>
+#include <string.h>
+#include "lists.h"
+
+/**
+ * add_node_end - adds a new node at the end of a list
+ * @head: pointer to the head of the list
+ * @str: string to duplicate
+ *
+ * Return: address of the new node, or NULL if it fails
+ */
+list_t *add_node_end(list_t **head, const char *str)
+{
+	list_t *new;
+	list_t *last;
+	unsigned int length = 0;
+
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
+		return (NULL);
+
+	new->str = strdup(str);
+	if (new->str == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+
+	while (str[length] != '\0')
+		length++;
+
+	new->len = length;
+	new->next = NULL;
+
+	if (*head == NULL)
+	{
+		*head = new;
+		return (new);
+	}
+
+	last = *head;
+
+	while (last->next != NULL)
+		last = last->next;
+
+	last->next = new;
+
+	return (new);
+}
